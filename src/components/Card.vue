@@ -1,7 +1,7 @@
 <template lang="">
   <div class="flex p-4 shadow-lg rounded-lg bg-secondary">
     <div class="icon">
-      <img class="w-12 h-12" :src="icon" alt="" />
+      <img class="w-12 h-12 " :src="icon" alt="" />
     </div>
     <div class="ml-3 self-center">
       <h3 class="-mb-2 self-center text-xl font-default">{{name}}</h3>
