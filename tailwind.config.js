@@ -4,7 +4,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'default' : ['Ubuntu']
+        'default' : ['Ubuntu'],
+        'secondary' : ['Comfortaa','cursive']
+      },
+      colors: {
+        'primary' : '#df3030',
+        'secondary' : '#fffaf4'
       }
     },
   },

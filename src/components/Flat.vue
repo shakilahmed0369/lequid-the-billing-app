@@ -17,7 +17,6 @@
     </div>
     <div class="item-section container mx-auto px-8 relative -mt-8">
         <div class="grid grid-cols-2 gap-3">
-            <router-link :to="{name: 'flat.index'}">
             <div class="flex p-4 shadow-lg rounded-lg bg-secondary">
                 <div class="icon">
                     <img class="w-14" :src="houseIcon" alt="">
@@ -27,9 +26,6 @@
                   <span class="font-default text-xs text-gray-500">Total : 4</span>
                 </div>
             </div>
-            </router-link>
-
-            <router-link :to="{name: 'shop.index'}">
             <div class="flex p-4 shadow-lg rounded-lg bg-secondary">
                 <div class="icon">
                     <img class="w-14" :src="shopIcon" alt="">
@@ -39,10 +35,9 @@
                   <span class="font-default text-xs text-gray-500">Total : 4</span>
                 </div>
             </div>
-            </router-link>
         </div> 
     </div>
-    <add-button-vue />
+        <add-button-vue />
 </template>
 
 <script>
