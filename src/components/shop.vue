@@ -20,31 +20,31 @@
 
             <router-link :to="{name: 'shop.index'}">
                 <card 
-                    name="Flats" 
+                    name="Shops" 
                     subname="Total: 4"
-                    :icon="houseIcon"
+                    :icon="shopIcon"
                 />
             </router-link>
 
             <router-link :to="{name: 'shop.index'}">
                 <card 
-                    name="Flats" 
+                    name="Shops" 
                     subname="Total: 4"
-                    :icon="houseIcon"
+                    :icon="shopIcon"
                 />
             </router-link>
             <router-link :to="{name: 'shop.index'}">
                 <card 
-                    name="Flats" 
+                    name="Shops" 
                     subname="Total: 4"
-                    :icon="houseIcon"
+                    :icon="shopIcon"
                 />
             </router-link>
             <router-link :to="{name: 'shop.index'}">
                 <card 
-                    name="Flats" 
+                    name="Shops" 
                     subname="Total: 4"
-                    :icon="houseIcon"
+                    :icon="shopIcon"
                 />
             </router-link>
         </div> 
@@ -55,8 +55,8 @@
 <script>
 import useTimeAndDate from '../composable/dateAndTimeIndex';
 import AddButtonVue from './AddButton.vue';
-import houseIcon from '../assets/house.png'
 import backIcon from '../assets/back.png'
+import shopIcon from '../assets/store.png'
 
 import Card from './Card.vue';
 export default {
@@ -70,8 +70,9 @@ export default {
         return {
             weekday,
             currentDate,
-            houseIcon,
-            backIcon
+            shopIcon,
+            backIcon,
+            shopIcon
         }
     },
     

@@ -17,28 +17,21 @@
     </div>
     <div class="item-section container mx-auto px-8 relative -mt-8">
         <div class="grid grid-cols-2 gap-3">
+
             <router-link :to="{name: 'flat.index'}">
-            <div class="flex p-4 shadow-lg rounded-lg bg-secondary">
-                <div class="icon">
-                    <img class="w-14" :src="houseIcon" alt="">
-                </div>
-                <div class=" ml-4 self-center" >
-                  <h3 class="-mb-2 self-center text-xl font-default">Flats</h3>  
-                  <span class="font-default text-xs text-gray-500">Total : 4</span>
-                </div>
-            </div>
+                <card 
+                    name="Flats" 
+                    subname="Total: 4"
+                    :icon="houseIcon"
+                />
             </router-link>
 
             <router-link :to="{name: 'shop.index'}">
-            <div class="flex p-4 shadow-lg rounded-lg bg-secondary">
-                <div class="icon">
-                    <img class="w-14" :src="shopIcon" alt="">
-                </div>
-                <div class=" ml-4 self-center" >
-                  <h3 class="-mb-2 self-center text-xl font-default">shop</h3>  
-                  <span class="font-default text-xs text-gray-500">Total : 4</span>
-                </div>
-            </div>
+                <card 
+                    name="Shops" 
+                    subname="Total: 4"
+                    :icon="shopIcon"
+                />
             </router-link>
         </div> 
     </div>
@@ -51,10 +44,12 @@ import { onMounted } from 'vue';
 import AddButtonVue from './AddButton.vue';
 import shopIcon from '../assets/store.png'
 import houseIcon from '../assets/house.png'
+import Card from './Card.vue';
 export default {
     components: {
-        AddButtonVue,
-    },
+    AddButtonVue,
+    Card
+},
 
     setup() {
         const {currentTime, showTime, currentDate, weekday} = useTimeAndDate(); 

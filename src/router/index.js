@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../components/Home.vue"
 import Flat from "../components/Flat.vue"
+import Shop from "../components/Shop.vue"
 const routes = [
     {
         path: '/',
@@ -15,7 +16,7 @@ const routes = [
     {
         path: '/shops',
         name: 'shop.index',
-        component: Home
+        component: Shop
     },
 ];
 
