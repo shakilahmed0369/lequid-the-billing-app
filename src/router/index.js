@@ -3,7 +3,9 @@ import Home from "../components/Home.vue"
 import Flat from "../components/Flat.vue"
 import Shop from "../components/Shop.vue"
 import ShopPaidList from "../components/ShopPaidList.vue"
-import CreateShop from "../components/CreateShop.vue"
+import Create from "../components/Create.vue"
+import AddBill from "../components/AddBill.vue"
+import ShopView from "../components/ShopView.vue"
 const routes = [
     {
         path: '/',
@@ -18,7 +20,7 @@ const routes = [
     {
         path: '/create',
         name: 'create',
-        component: CreateShop
+        component: Create
     },
     {
         path: '/shops',
@@ -29,6 +31,18 @@ const routes = [
         path: '/shops/:id/list',
         name: 'shop.list',
         component: ShopPaidList,
+        props: true
+    },
+    {
+        path: '/shops/:id/view',
+        name: 'shop.view',
+        component: ShopView,
+        props: true
+    },
+    {
+        path: '/addbill/:id',
+        name: 'addbill',
+        component: AddBill,
         props: true
     },
 ];
