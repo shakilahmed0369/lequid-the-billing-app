@@ -1,0 +1,4 @@
+- [x] fix show shop list design.
+- [ ] make the create store and flat form.
+- [ ] make payment form.
+- [ ] make view payment
