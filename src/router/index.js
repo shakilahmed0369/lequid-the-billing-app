@@ -3,6 +3,7 @@ import Home from "../components/Home.vue"
 import Flat from "../components/Flat.vue"
 import Shop from "../components/Shop.vue"
 import ShopPaidList from "../components/ShopPaidList.vue"
+import CreateShop from "../components/CreateShop.vue"
 const routes = [
     {
         path: '/',
@@ -13,6 +14,11 @@ const routes = [
         path: '/flats',
         name: 'flat.index',
         component: Flat 
+    },
+    {
+        path: '/create',
+        name: 'create',
+        component: CreateShop
     },
     {
         path: '/shops',

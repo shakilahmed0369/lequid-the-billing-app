@@ -35,7 +35,9 @@
             </router-link>
         </div> 
     </div>
-    <add-button-vue />
+    <router-link :to="{name: 'create'}">
+        <add-button-vue />
+    </router-link>
 </template>
 
 <script>
