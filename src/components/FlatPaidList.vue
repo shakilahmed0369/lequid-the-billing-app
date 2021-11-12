@@ -25,14 +25,9 @@
             <span class=" text-md font-medium pb-2 border-b-2 border-primary font-default">Last Added</span>
         </div>
         <div class="">
-            <list-card date="10-30-2021"/>
-            <list-card date="10-30-2021"/>
-            <list-card date="10-30-2021"/>
-            <list-card date="10-30-2021"/>
-            <list-card date="10-30-2021"/>
-            <list-card date="10-30-2021"/>
-            <list-card date="10-30-2021"/>
+            <list-card v-for="list in flatPaidList" :key="list.id" :date="list.created_at"/>
         </div>
+        
     </div>
     <add-button-vue />
 </template>
@@ -43,7 +38,9 @@ import AddButtonVue from './AddButton.vue';
 import ListCard from './ListCard.vue';
 import backIcon from '../assets/back.png'
 import shopIcon from '../assets/store.png'
-
+import { onMounted } from '@vue/runtime-core';
+import useFlat from '../composable/Flats';
+import { useRoute } from 'vue-router';
 export default {
     components: {
         AddButtonVue,
@@ -51,12 +48,18 @@ export default {
     },
     setup() {
         const { currentDate, weekday } = useTimeAndDate();
+        const {getFlatPaidList, flatPaidList} = useFlat();
+        const route = useRoute();
+        onMounted(getFlatPaidList(route.params.id))
+
         return {
             weekday,
             currentDate,
             shopIcon,
             backIcon,
-            shopIcon
+            shopIcon,
+            getFlatPaidList,
+            flatPaidList,
         }
     },
 

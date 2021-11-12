@@ -17,7 +17,6 @@
     </div>
     <div class="item-section container mx-auto px-8 relative -mt-8">
         <div class="grid grid-cols-2 gap-3">
-
             <router-link :to="{name: 'flat.index'}">
                 <card 
                     name="Flats" 
@@ -62,7 +61,6 @@ export default {
             currentTime,
             shopIcon,
             houseIcon,
-            
         }
     },
     

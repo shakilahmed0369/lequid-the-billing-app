@@ -18,32 +18,10 @@
     <div class="item-section container mx-auto px-8 relative -mt-8">
         <div class="grid grid-cols-2 gap-3">
 
-            <router-link :to="{name: 'shop.index'}">
+            <router-link v-for="flat in flats" :key="flat.id" :to="{name: 'flat.paidlist', params: {id: flat.id}}">
                 <card 
-                    name="Flats" 
-                    subname="Total: 4"
-                    :icon="houseIcon"
-                />
-            </router-link>
-
-            <router-link :to="{name: 'shop.index'}">
-                <card 
-                    name="Flats" 
-                    subname="Total: 4"
-                    :icon="houseIcon"
-                />
-            </router-link>
-            <router-link :to="{name: 'shop.index'}">
-                <card 
-                    name="Flats" 
-                    subname="Total: 4"
-                    :icon="houseIcon"
-                />
-            </router-link>
-            <router-link :to="{name: 'shop.index'}">
-                <card 
-                    name="Flats" 
-                    subname="Total: 4"
+                    :name="flat.name" 
+                    :subname="flat.sub_name"
                     :icon="houseIcon"
                 />
             </router-link>
@@ -57,8 +35,10 @@ import useTimeAndDate from '../composable/dateAndTimeIndex';
 import AddButtonVue from './AddButton.vue';
 import houseIcon from '../assets/house.png'
 import backIcon from '../assets/back.png'
-
 import Card from './Card.vue';
+
+import useFlat from '../composable/Flats';
+import { onMounted } from '@vue/runtime-core';
 export default {
     components: {
     AddButtonVue,
@@ -67,11 +47,15 @@ export default {
 
     setup() {
         const {currentDate, weekday} = useTimeAndDate(); 
+        const {getFlats, flats} = useFlat();
+
+        onMounted(getFlats)
         return {
             weekday,
             currentDate,
             houseIcon,
-            backIcon
+            backIcon,
+            flats
         }
     },
     
